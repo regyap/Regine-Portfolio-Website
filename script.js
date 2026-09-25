@@ -10,3 +10,7 @@ document.getElementById('themeToggle')?.addEventListener('click',e=>{document.bo
 
 const sections=[...document.querySelectorAll('main section[id]')],navLinks=[...document.querySelectorAll('.nav nav a')];
 const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>navObserver.observe(s));
+
+const menuToggle=document.getElementById('menuToggle'),siteNav=document.getElementById('siteNav');
+menuToggle?.addEventListener('click',()=>{const open=siteNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
+siteNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{siteNav.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false')}));
