@@ -7,3 +7,6 @@ const detail=document.getElementById('mapDetail');document.querySelectorAll('.no
 const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'none'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'})}),{threshold:.12});document.querySelectorAll('.project,.timeline article,.section-head').forEach(x=>reveal.observe(x));
 document.querySelectorAll('.project-filter button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.project-filter button').forEach(b=>b.classList.toggle('active',b===btn));const f=btn.dataset.filter;document.querySelectorAll('.project').forEach(p=>p.classList.toggle('is-hidden',f!=='all'&&p.dataset.kind!==f))}));
 document.getElementById('themeToggle')?.addEventListener('click',()=>document.body.classList.toggle('bright-stars'));
+
+const sections=[...document.querySelectorAll('main section[id]')],navLinks=[...document.querySelectorAll('.nav nav a')];
+const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>navObserver.observe(s));
