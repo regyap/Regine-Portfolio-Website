@@ -12,16 +12,17 @@
   <header class="nav">
     <a class="mark" href="#home">RY<span>.</span></a>
     <nav>
-      <a href="#constellation">Constellation</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
+      <a href="#constellation">Constellation</a><a href="#work">Work</a><a href="#stack">Toolbox</a><a href="#experience">Experience</a><a href="#principles">Approach</a><a href="#about">About</a>
     </nav>
-    <a class="nav-cta" href="https://github.com/regyap" target="_blank" rel="noreferrer">GitHub ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Toggle constellation intensity">✦</button>
+    <a class="nav-cta" href="https://github.com/regyap" target="_blank" rel="noreferrer">GitHub ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Toggle constellation intensity" aria-pressed="false">✦</button>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="eyebrow"><span></span> SINGAPORE · BUILDING ACROSS THE STACK</div>
+      <div class="eyebrow"><span></span> SINGAPORE · SOFTWARE / AI / DEVOPS / CLOUD</div>
       <h1>I engineer systems<br/>from <em>idea</em> to <em>infrastructure.</em></h1>
-      <p class="lede">I'm Regine Yap — an engineer working at the intersection of software, AI, DevOps and cloud platforms. I like turning repetitive work into code and prototypes into systems that run.</p>
+      <p class="lede">I'm Regine Yap — an engineer who moves between application code, AI systems and the infrastructure underneath them. I build prototypes, automate delivery, and work down the stack until the system runs reliably.</p>
+      <div class="proof-strip" aria-label="Engineering focus"><div><b>AI</b><span>multi-agent + RAG systems</span></div><div><b>DEVTOOLS</b><span>visual IaC generation</span></div><div><b>PLATFORM</b><span>AWS + enterprise automation</span></div></div>
       <div class="hero-actions"><a class="primary" href="#constellation">Explore my constellation ↓</a><a class="secondary" href="#work">View selected work</a></div><div class="signal"><span>01</span><p><b>BUILD</b> applications & AI prototypes</p><i>→</i><span>02</span><p><b>AUTOMATE</b> delivery & infrastructure</p><i>→</i><span>03</span><p><b>OPERATE</b> platforms in production</p></div>
       <div class="orbit-label">SCROLL TO NAVIGATE <span>✦</span></div>
     </section>
@@ -41,12 +42,12 @@
         <button class="node minor" data-node="platform" style="--x:91;--y:39"><i></i><b>PLATFORM</b><small>RHEL · AAP · TFE</small></button>
         <button class="node minor" data-node="data" style="--x:9;--y:53"><i></i><b>DATA</b><small>Postgres · ELK</small></button>
       </div>
-      <div class="map-detail" id="mapDetail"><span>SELECTED NODE</span><strong>REGINE / ENGINEER</strong><p>I build across application, automation and infrastructure layers — with code as the connecting thread.</p></div>
+      <div class="map-detail" id="mapDetail" aria-live="polite"><span>SELECTED NODE</span><strong>REGINE / ENGINEER</strong><p>I build across application, automation and infrastructure layers — with code as the connecting thread.</p></div>
     </section>
 
     <section class="work" id="work">
       <div class="section-head"><p>02 / SELECTED BUILDS</p><h2>Things I've engineered.</h2><span>Projects selected for range, technical depth and problem solving.</span></div>
-      <div class="project-filter" aria-label="Project filters"><button class="active" data-filter="all">ALL SYSTEMS</button><button data-filter="software">SOFTWARE / AI</button><button data-filter="platform">DEVOPS / PLATFORM</button></div><div class="projects">
+      <div class="project-filter" aria-label="Project filters"><button class="active" aria-pressed="true" data-filter="all">ALL SYSTEMS</button><button aria-pressed="false" data-filter="software">SOFTWARE / AI</button><button aria-pressed="false" data-filter="platform">DEVOPS / PLATFORM</button></div><div class="projects">
         <article class="project featured" data-kind="software"><div class="project-index">01</div><div><p class="tag">AGENTIC AI · REALTIME · FULL STACK</p><h3>JARMS — Emergency Audio Triage</h3><p>AI-assisted emergency audio triage for Personal Alert Button workflows. Parallel agents analyze speech, situational audio and acoustic events, then converge into a central triage engine for urgency, situation summaries and responder recommendations.</p><div class="project-metrics"><span><b>3</b> parallel AI agents</span><span><b>~20s</b> processing</span><span><b>5</b> urgency tiers</span></div><div class="chips"><span>React</span><span>FastAPI</span><span>Supabase</span><span>OpenAI</span><span>Qwen</span><span>Realtime</span></div><a class="project-link" href="https://github.com/regyap/Project-JARMS" target="_blank" rel="noreferrer">EXPLORE REPOSITORY ↗</a></div><div class="project-art architecture"><span>SPEECH</span><span>AUDIO</span><span>EVENT</span><span>TRIAGE</span><i></i></div></article>
         <article class="project" data-kind="software"><div class="project-index">02</div><div><p class="tag">AI · FULL STACK · RAG</p><h3>AI Job Applicator</h3><p>A resume comparison engine combining skill extraction, job matching and RAG-powered feedback with a React interface and hybrid PostgreSQL/Firebase storage.</p><div class="chips"><span>React</span><span>Python</span><span>PostgreSQL</span><span>Firebase</span><span>RAG</span><span>AWS</span></div></div></article>
         <article class="project" data-kind="software"><div class="project-index">03</div><div><p class="tag">AI · PROTOTYPING</p><h3>Integrated AI Prototyping Platform</h3><p>Interactive React + Flask dashboard integrating generative AI, speech/transcription and information widgets for rapid operational prototyping.</p><div class="chips"><span>React</span><span>Flask</span><span>OpenAI</span><span>Whisper</span><span>Zustand</span></div></div></article>
