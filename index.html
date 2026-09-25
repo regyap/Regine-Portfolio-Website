@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Regine Yap — software, AI, DevOps and cloud/platform engineer." />
+  <title>Regine Yap | Engineering Constellation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <header class="nav">
+    <a class="mark" href="#home">RY<span>.</span></a>
+    <nav>
+      <a href="#constellation">Constellation</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/regyap" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow"><span></span> SINGAPORE · BUILDING ACROSS THE STACK</div>
+      <h1>I engineer systems<br/>from <em>idea</em> to <em>infrastructure.</em></h1>
+      <p class="lede">I'm Regine Yap — an engineer working at the intersection of software, AI, DevOps and cloud platforms. I like turning repetitive work into code and prototypes into systems that run.</p>
+      <div class="hero-actions"><a class="primary" href="#constellation">Explore my constellation ↓</a><a class="secondary" href="#work">View selected work</a></div>
+      <div class="orbit-label">SCROLL TO NAVIGATE <span>✦</span></div>
+    </section>
+
+    <section class="constellation-section" id="constellation">
+      <div class="section-head"><p>01 / ENGINEERING CONSTELLATION</p><h2>One engineer. Multiple systems.</h2><span>Hover or tap a star to trace how my skills connect.</span></div>
+      <div class="map" id="skillMap">
+        <svg class="lines" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+          <g id="connections"></g>
+        </svg>
+        <button class="node core" data-node="core" style="--x:50;--y:49"><i></i><b>REGINE</b><small>ENGINEER</small></button>
+        <button class="node" data-node="software" style="--x:22;--y:25"><i></i><b>SOFTWARE</b><small>React · Python · Java</small></button>
+        <button class="node" data-node="ai" style="--x:74;--y:20"><i></i><b>AI</b><small>LLMs · RAG · NLP</small></button>
+        <button class="node" data-node="devops" style="--x:79;--y:62"><i></i><b>DEVOPS</b><small>CI/CD · GitLab · Jenkins</small></button>
+        <button class="node" data-node="cloud" style="--x:28;--y:75"><i></i><b>CLOUD</b><small>AWS · Azure · Kubernetes</small></button>
+        <button class="node minor" data-node="iac" style="--x:55;--y:82"><i></i><b>IaC</b><small>Terraform · Ansible</small></button>
+        <button class="node minor" data-node="platform" style="--x:91;--y:39"><i></i><b>PLATFORM</b><small>RHEL · AAP · TFE</small></button>
+        <button class="node minor" data-node="data" style="--x:9;--y:53"><i></i><b>DATA</b><small>Postgres · ELK</small></button>
+      </div>
+      <div class="map-detail" id="mapDetail"><span>SELECTED NODE</span><strong>REGINE / ENGINEER</strong><p>I build across application, automation and infrastructure layers — with code as the connecting thread.</p></div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="section-head"><p>02 / SELECTED BUILDS</p><h2>Things I've engineered.</h2><span>Projects selected for range, technical depth and problem solving.</span></div>
+      <div class="projects">
+        <article class="project featured"><div class="project-index">01</div><div><p class="tag">AI · FULL STACK · RAG</p><h3>AI Job Applicator</h3><p>A resume comparison engine for applicants and recruiters, combining skill extraction, job matching and RAG-powered feedback with a React interface and hybrid PostgreSQL/Firebase storage.</p><div class="chips"><span>React</span><span>Python</span><span>PostgreSQL</span><span>Firebase</span><span>RAG</span><span>AWS</span></div></div><div class="project-art"><span>RAG</span><span>API</span><span>DB</span><span>UI</span></div></article>
+        <article class="project"><div class="project-index">02</div><div><p class="tag">AI · PROTOTYPING</p><h3>Integrated AI Prototyping Platform</h3><p>Interactive React + Flask dashboard integrating generative AI, speech/transcription and information widgets for rapid operational prototyping.</p><div class="chips"><span>React</span><span>Flask</span><span>OpenAI</span><span>Whisper</span><span>Zustand</span></div></div></article>
+        <article class="project"><div class="project-index">03</div><div><p class="tag">MACHINE LEARNING · K8S</p><h3>Real-time Disinformation Detection</h3><p>Python classification prototype for misinformation detection, packaged and hosted using Docker and Kubernetes.</p><div class="chips"><span>Python</span><span>ML</span><span>Docker</span><span>Kubernetes</span></div></div></article>
+        <article class="project"><div class="project-index">04</div><div><p class="tag">DEVSECOPS · AUTOMATION</p><h3>Secure Platform Automation</h3><p>Reusable automation for RHEL hardening, agent installation and VM provisioning, alongside DevSecOps controls for Ansible and Terraform workflows.</p><div class="chips"><span>Ansible</span><span>Terraform</span><span>GitLab CI</span><span>RHEL</span><span>Podman</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="section-head"><p>03 / EXPERIENCE</p><h2>From code to production.</h2></div>
+      <div class="timeline">
+        <article><time>2025 — NOW</time><div><h3>NCS <span>Infrastructure Engineer · Nucleus Graduate Program</span></h3><p>Platform engineering, Linux hardening, DevSecOps pipelines, infrastructure automation and containerised enterprise platforms in air-gapped environments.</p></div></article>
+        <article><time>2024</time><div><h3>Accenture <span>Cloud DevOps / Technical Architecture Intern</span></h3><p>AWS operations, deployment automation, GitLab workflows, database/system administration and vulnerability remediation.</p></div></article>
+        <article><time>2022 — 2023</time><div><h3>Ministry of Home Affairs <span>AI Developer / Software Engineering Intern</span></h3><p>Full-stack AI prototypes, LLM integrations, interactive operational dashboards and ML deployment.</p></div></article>
+        <article><time>2020 — 2021</time><div><h3>Monetary Authority of Singapore <span>Software / Network Engineer Intern</span></h3><p>ELK observability, Jenkins automation, Selenium testing and Python-based infrastructure auditing.</p></div></article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="kicker">04 / ABOUT</p><div><h2>I don't want infrastructure and software to be separate worlds.</h2><p>My background crosses software engineering, AI, networking and infrastructure. That range shaped how I work: understand the system, automate what repeats, and keep learning far enough down the stack to know why it works.</p><p>Outside work, I keep coding through projects, LeetCode, hackathons and cloud/platform labs.</p><a href="mailto:regineyap1609@gmail.com">regineyap1609@gmail.com ↗</a></div>
+    </section>
+  </main>
+  <footer><span>REGINE YAP © 2026</span><span>SOFTWARE ✦ AI ✦ DEVOPS ✦ CLOUD</span><a href="#home">BACK TO ORBIT ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
