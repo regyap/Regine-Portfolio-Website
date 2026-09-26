@@ -1,0 +1,92 @@
+name: Portfolio improvement proposal
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 2 * * 1'
+
+concurrency:
+  group: portfolio-improvement
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    outputs:
+      has_patch: ${{ steps.patch.outputs.has_patch }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Baseline build
+        run: npm run build
+      - name: Improve portfolio
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ':workspace'
+          prompt-file: .github/codex/portfolio-improvement.md
+      - name: Verify final build
+        run: npm run build
+      - name: Create patch
+        id: patch
+        run: |
+          git add -N .
+          git diff --binary HEAD -- . ':!package-lock.json' > "$RUNNER_TEMP/portfolio.patch"
+          if [ -s "$RUNNER_TEMP/portfolio.patch" ]; then
+            echo 'has_patch=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'has_patch=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: steps.patch.outputs.has_patch == 'true'
+        with:
+          name: portfolio-patch
+          path: ${{ runner.temp }}/portfolio.patch
+          if-no-files-found: error
+          retention-days: 7
+
+  propose:
+    needs: generate
+    if: needs.generate.outputs.has_patch == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: portfolio-patch
+          path: ${{ runner.temp }}
+      - name: Apply and verify patch
+        run: |
+          git apply --index "$RUNNER_TEMP/portfolio.patch"
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run build
+      - name: Open proposal
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          branch="codex/portfolio-$RUN_ID"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+          git commit -m 'Improve portfolio with Codex'
+          git push origin "$branch"
+          gh pr create --draft --base main --head "$branch" \
+            --title 'Portfolio improvement proposal ($RUN_ID)' \
+            --body 'Automated proposal. Codex inspected the portfolio, made bounded iterations, and verified `npm run build`. Please check all factual claims and visual behaviour before merging.'
