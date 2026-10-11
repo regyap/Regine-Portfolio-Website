@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Regine Yap — software, cloud, DevOps and platform engineering portfolio." />
+  <title>Regine Yap — Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="site-nav">
+    <a class="brand" href="#home">REGINE <span>✦</span></a>
+    <nav>
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#constellations">Skills</a><a href="#roots">Impact</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="sound-toggle" aria-label="Toggle sounds" title="Toggle sounds">♪</button>
+  </header>
+
+  <main id="world">
+    <svg class="journey-path" viewBox="0 0 1200 4800" preserveAspectRatio="none" aria-hidden="true">
+      <path id="path-line" d="M720 100 C1000 360 270 540 520 860 C860 1170 1010 1290 730 1600 C450 1910 260 2060 580 2360 C900 2660 1020 2820 760 3150 C520 3450 300 3610 600 3890 C850 4110 940 4300 650 4680" />
+    </svg>
+    <div class="traveler" aria-hidden="true"><span></span></div>
+
+    <section class="panel hero" id="home" data-tone="ink">
+      <div class="eyebrow">HELLO, I'M</div>
+      <h1>Regine Yap</h1>
+      <p class="role">Software · Cloud · DevOps · Platform Engineering</p>
+      <p class="lead">I build and automate systems across software, cloud infrastructure and platform engineering.</p>
+      <div class="hero-actions">
+        <a class="cta primary tactile" href="#projects">Explore my work <span>→</span></a>
+        <a class="cta ghost tactile" href="#about">About me</a>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><span class="planet"></span><span class="orbit one"></span><span class="orbit two"></span></div>
+      <div class="scroll-cue">SCROLL <span>↓</span></div>
+    </section>
+
+    <section class="panel about" id="about" data-tone="slate">
+      <div class="panel-copy reveal">
+        <span class="section-no">01 / ABOUT</span>
+        <h2>Curious builder.<br><em>Systems thinker.</em></h2>
+        <p>I like work where software, infrastructure and automation meet. The interface stays quiet; the world moves around it.</p>
+      </div>
+      <div class="about-grid">
+        <article class="mini-card tactile"><small>OPERATE</small><strong>Linux · Networking</strong></article>
+        <article class="mini-card tactile"><small>AUTOMATE</small><strong>Ansible · Terraform</strong></article>
+        <article class="mini-card tactile"><small>PLATFORM</small><strong>Kubernetes · OpenShift</strong></article>
+        <article class="mini-card tactile"><small>BUILD</small><strong>Python · APIs</strong></article>
+      </div>
+    </section>
+
+    <section class="panel projects" id="projects" data-tone="ink">
+      <div class="panel-copy reveal">
+        <span class="section-no">02 / PROJECTS</span>
+        <h2>Selected systems.</h2>
+        <p>Real architecture, compact explanations, no oversized cards.</p>
+      </div>
+      <div class="project-layout">
+        <nav class="project-tabs" aria-label="Projects">
+          <button class="active tactile" data-project="rosa">ROSA Platform</button>
+          <button class="tactile" data-project="auto">Automation Platform</button>
+          <button class="tactile" data-project="ai">AI Experiments</button>
+        </nav>
+        <article class="project-view reveal" id="project-view">
+          <div><span class="section-no" id="project-kicker">CLOUD PLATFORM</span><h3 id="project-title">ROSA Platform</h3><p id="project-copy">Cloud-native platform work connecting GitLab, AWS infrastructure, container delivery and OpenShift.</p></div>
+          <div class="project-flow" id="project-flow"><span>GitLab</span><i>→</i><span>ECR</span><i>→</i><span>ROSA</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel constellation-section" id="constellations" data-tone="space">
+      <div class="panel-copy reveal">
+        <span class="section-no">03 / CONSTELLATIONS</span>
+        <h2>Engineering universe.</h2>
+        <p>Hover the stars. The constellation stays astronomical; the technology appears only when you ask for it.</p>
+      </div>
+      <div class="constellation-wrap">
+        <div class="constellation-sky" id="constellation-sky" aria-label="Interactive skills constellation">
+          <svg viewBox="0 0 800 430" role="img" aria-label="Constellation map of engineering skills">
+            <g class="constellation-lines">
+              <line x1="170" y1="100" x2="340" y2="190"/><line x1="340" y1="190" x2="540" y2="95"/><line x1="340" y1="190" x2="590" y2="270"/><line x1="340" y1="190" x2="210" y2="315"/><line x1="210" y1="315" x2="470" y2="360"/><line x1="470" y1="360" x2="590" y2="270"/>
+            </g>
+          </svg>
+          <button class="star s-cloud tactile" data-skill="cloud"><span></span><b>Cloud</b></button>
+          <button class="star s-devops tactile" data-skill="devops"><span></span><b>DevOps</b></button>
+          <button class="star s-platform tactile" data-skill="platform"><span></span><b>Platform</b></button>
+          <button class="star s-linux tactile" data-skill="linux"><span></span><b>Linux</b></button>
+          <button class="star s-code tactile" data-skill="code"><span></span><b>Software</b></button>
+          <button class="star s-ai tactile" data-skill="ai"><span></span><b>AI</b></button>
+          <div class="skill-popover" id="skill-popover">
+            <span class="section-no" id="skill-kicker">CLOUD</span>
+            <h3 id="skill-title">AWS</h3>
+            <p id="skill-copy">VPC · IAM · S3 · ROSA</p>
+          </div>
+        </div>
+        <aside class="constellation-projects">
+          <span class="section-no">RELATED PROJECTS</span>
+          <a href="#projects"><strong>ROSA Platform</strong><span>AWS · OpenShift · GitLab</span></a>
+          <a href="#projects"><strong>Automation Platform</strong><span>AAP · Terraform · Nutanix</span></a>
+          <a href="#projects"><strong>AI Experiments</strong><span>Agents · Data · MLOps</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel roots" id="roots" data-tone="earth">
+      <div class="panel-copy reveal">
+        <span class="section-no">04 / ROOTS</span>
+        <h2>Work that reaches<br><em>further.</em></h2>
+        <p>Community and volunteering sit below the visible surface — literally.</p>
+      </div>
+      <div class="root-scene" id="root-scene" aria-label="Interactive 3D root system">
+        <div class="root trunk"></div>
+        <div class="root r1"></div><div class="root r2"></div><div class="root r3"></div><div class="root r4"></div><div class="root r5"></div><div class="root r6"></div>
+        <button class="root-node rn1 tactile" data-root="Community">Community</button>
+        <button class="root-node rn2 tactile" data-root="Volunteering">Volunteering</button>
+        <button class="root-node rn3 tactile" data-root="Knowledge sharing">Knowledge sharing</button>
+        <button class="root-node rn4 tactile" data-root="Event support">Event support</button>
+        <div class="root-info" id="root-info">Select a root node.</div>
+      </div>
+    </section>
+
+    <section class="panel mine" id="mine" data-tone="cave">
+      <div class="panel-copy reveal">
+        <span class="section-no">05 / SKILL MINE</span>
+        <h2>Engineering bedrock.</h2>
+        <p>Skills are discoverable rather than displayed as fake percentages.</p>
+      </div>
+      <div class="gem-field">
+        <button class="gem tactile" data-gem="Linux">◆<span>Linux</span></button>
+        <button class="gem tactile" data-gem="GitLab CI/CD">◆<span>GitLab CI/CD</span></button>
+        <button class="gem tactile" data-gem="Ansible">◆<span>Ansible</span></button>
+        <button class="gem tactile" data-gem="AWS">◆<span>AWS</span></button>
+        <button class="gem tactile" data-gem="Terraform">◆<span>Terraform</span></button>
+        <button class="gem tactile" data-gem="OpenShift">◆<span>OpenShift</span></button>
+        <button class="gem tactile" data-gem="Kubernetes">◆<span>Kubernetes</span></button>
+        <button class="gem tactile" data-gem="Python">◆<span>Python</span></button>
+      </div>
+      <small class="mine-status" id="mine-status">0 discoveries</small>
+    </section>
+
+    <section class="panel contact" id="contact" data-tone="lava">
+      <div class="lava-side left" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="lava-side right" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="contact-inner reveal">
+        <span class="section-no">06 / CONTACT</span>
+        <h2>contact me?</h2>
+        <p>Ideas, opportunities, collaboration — or just hello.</p>
+        <div class="contact-links"><a class="tactile" href="#">Email</a><a class="tactile" href="#">LinkedIn</a><a class="tactile" href="#">GitHub</a></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
